@@ -1,5 +1,7 @@
 package com.example.demo.infraestructura.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.example.demo.domain.model.Cancion;
 import com.example.demo.infraestructura.dto.CancionDto;
 import com.example.demo.infraestructura.restdto.CancionRestDto;
@@ -12,6 +14,7 @@ import com.example.demo.shared.domain.Valor;
 import com.example.demo.shared.infraestructura.MapperApiRest;
 import com.example.demo.shared.infraestructura.MapperRepository;
 
+@Component
 public class CancionMapper implements MapperRepository<Cancion, CancionDto>, MapperApiRest<Cancion, CancionRestDto>{
 
 	@Override

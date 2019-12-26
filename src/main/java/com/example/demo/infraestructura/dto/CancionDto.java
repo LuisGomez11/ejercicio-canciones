@@ -1,8 +1,10 @@
 package com.example.demo.infraestructura.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "canciones")
 public class CancionDto extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
@@ -17,15 +19,6 @@ public class CancionDto extends BaseEntity {
 	public CancionDto() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	/*private CancionDto(String nombre, String autor, Double valor, Double duracion, String genero, Double calificacion) {
-		this.nombre = nombre;
-		this.autor = autor;
-		this.valor = valor;
-		this.duracion = duracion;
-		this.genero = genero;
-		this.calificacion = calificacion;
-	}*/
 
 	public String getNombre() {
 		return nombre;

@@ -13,15 +13,15 @@ public class ExceptionHandlers {
 
 	private static final Logger LOG = Logger.getLogger(ExceptionHandlers.class.getName());
 	
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler(Exception.class)
-	public ErrorCode handlerException(Exception e) {
-		ErrorCode ec = new ErrorCode();
-		ec.setCodigo(this.getId());
-		ec.setMensaje("Error no controlado");
-		this.LogError(ec, e);
-		return ec;
-	}
+//	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+//	@ExceptionHandler(Exception.class)
+//	public ErrorCode handlerException(Exception e) {
+//		ErrorCode ec = new ErrorCode();
+//		ec.setCodigo(this.getId());
+//		ec.setMensaje("Error no controlado");
+//		this.LogError(ec, e);
+//		return ec;
+//	}
 	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(NombreNoValidoException.class)

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.model.Cancion;
 import com.example.demo.domain.services.CancionService;
@@ -13,6 +14,7 @@ import com.example.demo.infraestructura.mapper.CancionMapper;
 import com.example.demo.infraestructura.repository.database.CancionRepository;
 import com.example.demo.shared.domain.Codigo;
 
+@Service
 public class CancionAdapter implements CancionService{
 
 	@Autowired
@@ -28,7 +30,7 @@ public class CancionAdapter implements CancionService{
 
 	@Override
 	public Cancion findById(Codigo codigo) {
-		return cancionMapper.convertirDtoADomain(cancionRepository.findById(codigo.toString()).get());
+		return cancionMapper.convertirDtoADomain(cancionRepository.findById(codigo.getValue()).get());
 	}
 
 	@Override
@@ -45,7 +47,7 @@ public class CancionAdapter implements CancionService{
 
 	@Override
 	public void delete(Codigo codigo) {
-		CancionDto cancion = cancionRepository.findById(codigo.toString()).orElseThrow(() -> new RegistroNoEncontrado());
+		CancionDto cancion = cancionRepository.findById(codigo.getValue()).orElseThrow(() -> new RegistroNoEncontrado());
 		cancionRepository.deleteById(cancion.getCodigo());
 	}
 
