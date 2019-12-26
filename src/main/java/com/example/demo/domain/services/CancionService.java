@@ -9,7 +9,7 @@ public interface CancionService {
 
 	public List<Cancion> findAll();
 	public Cancion findById(Codigo codigo);
-	public List<Cancion> findByIds(List<Codigo> codigo);
+	public List<Cancion> findByIds(List<String> codigos);
 	public void save (Cancion cancion);
 	public void delete (Codigo codigo);
 	

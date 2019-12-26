@@ -9,7 +9,7 @@ public interface MapperApiRest <I,O>{
 	
 	public O apiConvertirDomainADto (I i);
 	
-	public default List<O> apiConvertirrListaDtoParaDominio(List<I> instancias) {
+	public default List<O> apiConvertirListaDtoParaDominio(List<I> instancias) {
 		return instancias.stream().map(o -> apiConvertirDomainADto(o)).collect(Collectors.toList());
 	}
 
