@@ -35,7 +35,7 @@ public class AlbumAplication {
 	}
 	
 	public List<AlbumRestDto> getAlbumes(){
-		return albumMapper.apiConvertirListaDtoParaDominio(albumService.findAll());
+		return albumMapper.apiConvertirListaDominioParaDto(albumService.findAll());
 	}
 	
 	public AlbumRestDto getAlbum(Codigo codigo) {

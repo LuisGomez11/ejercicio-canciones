@@ -9,9 +9,9 @@ public class AlbumRestDto {
 	private String codigo;
 	private String titulo;
 	private Double valorTotal;
-	private List<CancionDto> canciones;
+	private List<CancionRestDto> canciones;
 	
-	public AlbumRestDto(String codigo, String titulo, Double valorTotal, List<CancionDto> canciones) {
+	public AlbumRestDto(String codigo, String titulo, Double valorTotal, List<CancionRestDto> canciones) {
 		this.codigo = codigo;
 		this.titulo = titulo;
 		this.valorTotal = valorTotal;
@@ -42,11 +42,11 @@ public class AlbumRestDto {
 		this.valorTotal = valorTotal;
 	}
 
-	public List<CancionDto> getCanciones() {
+	public List<CancionRestDto> getCanciones() {
 		return canciones;
 	}
 
-	public void setCanciones(List<CancionDto> canciones) {
+	public void setCanciones(List<CancionRestDto> canciones) {
 		this.canciones = canciones;
 	}
 	

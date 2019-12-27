@@ -21,14 +21,14 @@ public class AlbumMapper implements MapperRepository<Album, AlbumDto>, MapperApi
 	@Override
 	public Album apiConvertirDtoADomain(AlbumRestDto o) {
 		return Album.of(new Codigo(o.getCodigo()), new Nombre(o.getTitulo()), new Valor(o.getValorTotal()),
-				cancionMapper.convertirListaDtoParaDominio(o.getCanciones()));
+				cancionMapper.apiConvertirListaDtoParaDominio(o.getCanciones()));
 	}
 
 	@Override
 	public AlbumRestDto apiConvertirDomainADto(Album i) {
 		
 		AlbumRestDto album = new AlbumRestDto(i.getCodigo().getValue(), i.getTitulo().getValue(), i.getValorTotal().getValue(), 
-				cancionMapper.convertirListDominioParaDto(i.getCanciones()));
+				cancionMapper.apiConvertirListaDominioParaDto(i.getCanciones()));
 		
 		return album;
 	}

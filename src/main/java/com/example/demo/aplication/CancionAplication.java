@@ -31,7 +31,7 @@ public class CancionAplication {
 	}
 	
 	public List<CancionRestDto> getCanciones(){
-		return cancionMapper.apiConvertirListaDtoParaDominio(cancionService.findAll());
+		return cancionMapper.apiConvertirListaDominioParaDto(cancionService.findAll());
 	}
 	
 	public CancionRestDto getCancion(Codigo codigo) {
